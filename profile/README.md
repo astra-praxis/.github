@@ -1,31 +1,23 @@
 <div align="center">
 
-# ✦ ASTRA PRAXIS
+<img src="https://raw.githubusercontent.com/astra-praxis/.github/main/profile/assets/banner.svg" alt="ASTRA PRAXIS · Astra 是星，Praxis 是动手" width="100%" />
 
-**Astra 是星，Praxis 是动手。**
-星图画在你自己的硬盘上。
+<img src="https://raw.githubusercontent.com/astra-praxis/.github/main/profile/assets/boot.svg" alt="astra --boot 自检终端动画" width="100%" />
 
-</div>
-
-```text
-$ astra --boot
-[ ok ] 权限引擎 ......... 已挂载 · 越权硬拦截
-[ ok ] 长期记忆 ......... 已加密 · 仅存本机
-[ ok ] 工具舱 .......... 文件 · 命令 · 搜索 · MCP · Skills
-[ ok ] Serve 宿主 ...... 在线 · 无人值守待命
-[ >> ] 等待你的第一条指令 _
-```
-
-<div align="center">
-
-[![Astra release](https://img.shields.io/github/v/release/astra-praxis/astra?style=flat-square&label=astra&color=5b4dff)](https://github.com/astra-praxis/astra/releases)
+[![Astra release](https://img.shields.io/github/v/release/astra-praxis/astra?style=flat-square&label=astra&color=5b4dff&labelColor=111111)](https://github.com/astra-praxis/astra/releases)
 ![platforms](https://img.shields.io/badge/macOS%20%C2%B7%20Windows%20%C2%B7%20Linux-Tauri%202-111111?style=flat-square)
+![local-first](https://img.shields.io/badge/local--first-%E6%98%9F%E5%9B%BE%E7%94%BB%E5%9C%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A1%AC%E7%9B%98%E4%B8%8A-5b4dff?style=flat-square)
+![no telemetry](https://img.shields.io/badge/telemetry-%E6%97%A0-111111?style=flat-square)
 
-**local-first AI Agent 桌面应用** —— 选一个工作目录，用对话让它读文件、改文件、跑命令、搜网页、写文档、出图。会话多开几扇标签；每次伸手碰工具，都先过权限引擎；记得住的东西加密后留在本机。模型走 OpenAI 兼容接口就行，本地服务也可以。
+**local-first AI Agent 桌面应用** —— 选一个工作目录，用对话让它读文件、改文件、跑命令、搜网页、写文档、出图。
+会话多开几扇标签；每次伸手碰工具，都先过权限引擎；记得住的东西加密后留在本机。
+模型走 OpenAI 兼容接口就行，本地服务也可以。
 
 ### 脑子可以借，抽屉是自己的。
 
 </div>
+
+---
 
 ## 🗺 航图 · 你大概是来找这些的
 
@@ -50,15 +42,9 @@ $ astra --boot
 
 ## ⚙️ 引擎室
 
-```mermaid
-flowchart TD
-  You["你选定工作目录"] --> Astra["Astra"]
-  Astra --> Tools["文件 · 命令 · 搜索"]
-  Astra --> Ext["MCP / ACP / Skills"]
-  Astra --> Mem["加密长期记忆"]
-  Model["模型 API 或本地模型"] -.-> Astra
-  Host["astra-serve-host"] -.-> Astra
-```
+<div align="center">
+<img src="https://raw.githubusercontent.com/astra-praxis/.github/main/profile/assets/engine.svg" alt="引擎室数据流示意图：工具的调用都要穿过权限引擎" width="100%" />
+</div>
 
 ## 🚀 起飞
 
@@ -78,14 +64,31 @@ flowchart TD
 
 </details>
 
+<details>
+<summary>🧭 一些常见的误读</summary>
+
+| 你以为 | 其实是 |
+| --- | --- |
+| 「又一个云端 Agent 套壳」 | 桌面应用，目录是你的，密钥也在你的机器上 |
+| 「得先有钱包才能跑」 | 模型接口自己填，本地起的服务一样接 |
+| 「记忆就是聊天记录换个说法」 | 是跨会话的长期记忆，本地加密、可纠正、可失效 |
+| 「越狱提示词能让它多拿权限」 | 权限引擎卡在工具边界，不在模型嘴里 |
+
+</details>
+
 ## 📡 船员日志
 
 > runtime / core 还在灶上，公开航图里先不挂链接。能下载、能接上的，就是上面航图里的三处。
 
 ---
 
-合用的话，给 [astra](https://github.com/astra-praxis/astra) 一颗 **Star** —— 这是本舰唯一的燃料。或者 **Watch** 它的 Releases，新安装包出来你会先知道。
+<div align="center">
 
----
+合用的话，给 [astra](https://github.com/astra-praxis/astra) 一颗 **Star** —— 这是本舰唯一的燃料。
+或者 **Watch** 它的 Releases，新安装包出来你会先知道。
 
 桌面应用许可证是 [MIT](https://github.com/astra-praxis/astra/blob/main/LICENSE)。记忆组件的许可见它自己的仓库。`astra-serve-host` 二进制按现状分发。有问题或想法，到对应仓库开 Issue。
+
+<sub>组织展示页由 <code>.github</code> 仓库的 <code>profile/README.md</code> 渲染；上面三段动画在 <code>profile/assets/</code>，纯手写 SVG（SMIL），不依赖第三方统计或图片服务。</sub>
+
+</div>

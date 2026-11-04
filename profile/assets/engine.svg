@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="engTitle engDesc">
+  <title id="engTitle">引擎室</title>
+  <desc id="engDesc">数据流示意图：你选定工作目录，Astra 居中，向左连工具舱、向右连 MCP/ACP/Skills、向下连加密记忆，上方虚线接入模型 API 与 serve-host。连线上有光点循环流动，表示请求与结果的往返。</desc>
+
+  <defs>
+    <linearGradient id="nodeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1738"/>
+      <stop offset="100%" stop-color="#12102a"/>
+    </linearGradient>
+    <linearGradient id="coreFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2260"/>
+      <stop offset="55%" stop-color="#5b4dff"/>
+      <stop offset="100%" stop-color="#3b31b8"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#cfc9ff"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="coreGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <path id="pYou"   d="M 208 190 L 344 190"/>
+    <path id="pTools" d="M 568 132 C 618 132 560 60 612 60"/>
+    <path id="pExt"   d="M 568 190 C 630 190 590 190 648 190"/>
+    <path id="pMem"   d="M 568 248 C 618 248 580 320 632 320"/>
+    <path id="pModel" d="M 456 88 C 456 52 456 46 456 20"/>
+    <path id="pHost"  d="M 456 292 C 456 328 456 336 456 360"/>
+  </defs>
+
+  <rect width="960" height="380" fill="#07060f"/>
+  <ellipse cx="456" cy="190" rx="330" ry="190" fill="#5b4dff" opacity="0.07" filter="url(#soft)"/>
+
+  <!-- 连线 -->
+  <g fill="none" stroke="#2b2557" stroke-width="1.4">
+    <use href="#pYou"/>
+    <use href="#pTools"/>
+    <use href="#pExt"/>
+    <use href="#pMem"/>
+    <use href="#pModel" stroke-dasharray="5 6"/>
+    <use href="#pHost" stroke-dasharray="5 6"/>
+  </g>
+  <g fill="none" stroke="#7b6cff" stroke-width="1.4" opacity="0.5" stroke-linecap="round">
+    <use href="#pYou"/>
+    <use href="#pTools"/>
+    <use href="#pExt"/>
+    <use href="#pMem"/>
+  </g>
+
+  <!-- 流动光点 -->
+  <g>
+    <circle r="3.2" fill="url(#spark)">
+      <animateMotion dur="2.6s" repeatCount="indefinite" begin="0s"><mpath href="#pYou"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.2" fill="url(#spark)">
+      <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.3s"><mpath href="#pTools"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.2" fill="url(#spark)">
+      <animateMotion dur="2s" repeatCount="indefinite" begin="0.9s"><mpath href="#pExt"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.2" fill="url(#spark)">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.6s"><mpath href="#pMem"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.6" fill="#22d3ee">
+      <animateMotion dur="3.2s" repeatCount="indefinite" begin="0s"><mpath href="#pModel"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.6" fill="#22d3ee">
+      <animateMotion dur="3.2s" repeatCount="indefinite" begin="1.6s"><mpath href="#pHost"/></animateMotion>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 你 / 工作目录 -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect x="40" y="158" width="168" height="64" rx="10" fill="url(#nodeFill)" stroke="#2b2557"/>
+    <text x="124" y="184" text-anchor="middle" fill="#e6e4ff" font-size="13">你选定工作目录</text>
+    <text x="124" y="204" text-anchor="middle" fill="#6f6d92" font-size="11">workspace/</text>
+  </g>
+
+  <!-- Astra 核心 -->
+  <g>
+    <circle cx="456" cy="190" r="126" fill="none" stroke="#392f7a" stroke-width="1" stroke-dasharray="2 8">
+      <animateTransform attributeName="transform" type="rotate" from="0 456 190" to="360 456 190" dur="40s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="456" cy="190" r="106" fill="none" stroke="#2b2557" stroke-width="1"/>
+    <rect x="356" y="140" width="200" height="100" rx="16" fill="url(#coreFill)" filter="url(#coreGlow)"/>
+    <text x="456" y="176" text-anchor="middle" fill="#ffffff"
+          font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" letter-spacing="3">ASTRA</text>
+    <text x="456" y="200" text-anchor="middle" fill="#d6d2ff"
+          font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1">Tauri 2 · Rust · React</text>
+    <text x="456" y="220" text-anchor="middle" fill="#a9a2f5"
+          font-family="ui-monospace, Menlo, monospace" font-size="10.5" letter-spacing="1">每碰一次工具，先过权限</text>
+    <rect x="356" y="140" width="200" height="3" rx="1.5" fill="#cfc9ff" opacity="0.85">
+      <animate attributeName="opacity" values="0.15;0.9;0.15" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 右侧三舱 -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5">
+    <rect x="612" y="38" width="308" height="46" rx="10" fill="url(#nodeFill)" stroke="#2b2557"/>
+    <text x="632" y="58" fill="#b8b5d8">🧰 工具舱</text>
+    <text x="632" y="74" fill="#6f6d92" font-size="11">文件 · 命令 · 网页搜索</text>
+
+    <rect x="648" y="167" width="272" height="46" rx="10" fill="url(#nodeFill)" stroke="#2b2557"/>
+    <text x="668" y="187" fill="#b8b5d8">🔌 MCP / ACP / Skills</text>
+    <text x="668" y="203" fill="#6f6d92" font-size="11">外接能力按需挂载</text>
+
+    <rect x="632" y="297" width="288" height="46" rx="10" fill="url(#nodeFill)" stroke="#2b2557"/>
+    <text x="652" y="317" fill="#b8b5d8">🧠 加密长期记忆</text>
+    <text x="652" y="333" fill="#6f6d92" font-size="11">本地 SQLite · 无云 · 无遥测</text>
+  </g>
+
+  <!-- 上下虚线端 -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">
+    <rect x="366" y="6" width="180" height="30" rx="8" fill="#0f0e20" stroke="#26214a"/>
+    <text x="456" y="25" text-anchor="middle" fill="#8f8cb8">模型 API / 本地模型</text>
+    <rect x="366" y="344" width="180" height="30" rx="8" fill="#0f0e20" stroke="#26214a"/>
+    <text x="456" y="363" text-anchor="middle" fill="#8f8cb8">astra-serve-host</text>
+  </g>
+
+  <!-- 图例 -->
+  <g font-family="ui-monospace, Menlo, monospace" font-size="10.5" fill="#57547a">
+    <line x1="40" y1="300" x2="82" y2="300" stroke="#7b6cff" stroke-width="1.4"/>
+    <text x="90" y="304">实时往返</text>
+    <line x1="40" y1="322" x2="82" y2="322" stroke="#2b2557" stroke-width="1.4" stroke-dasharray="5 6"/>
+    <text x="90" y="326">可插拔 / 可缺省</text>
+  </g>
+</svg>

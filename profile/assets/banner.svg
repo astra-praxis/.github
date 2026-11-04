@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-labelledby="bnTitle bnDesc">
+  <title id="bnTitle">ASTRA PRAXIS</title>
+  <desc id="bnDesc">深色星空背景。ASTRA PRAXIS 字样自下而上浮现，字面带缓慢流动的紫色光泽；两道轨道依次绘制并各有一颗卫星沿轨道运行；一颗彗星周期性地自左向右划过。</desc>
+
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="44%" r="72%">
+      <stop offset="0%" stop-color="#151038"/>
+      <stop offset="55%" stop-color="#0a0819"/>
+      <stop offset="100%" stop-color="#05050f"/>
+    </radialGradient>
+
+    <radialGradient id="nebula1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5b4dff" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#5b4dff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="nebula2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="word" x1="150" y1="0" x2="870" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6f60ff"/>
+      <stop offset="42%" stop-color="#cfc9ff"/>
+      <stop offset="52%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#4534c9"/>
+      <animate attributeName="x1" values="60;560;60" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="780;1280;780" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="tail" x1="0" y1="0" x2="-46" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#dff6ff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#7b6cff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="orbitFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="18%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="34%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="63%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="orbitMask">
+      <rect width="1200" height="340" fill="url(#orbitFade)"/>
+    </mask>
+
+    <linearGradient id="rule" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7b6cff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#7b6cff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#7b6cff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <path id="orbitA" d="M -470 0 A 470 132 0 1 1 470 0 A 470 132 0 1 1 -470 0" fill="none"/>
+    <path id="orbitB" d="M 0 -196 A 318 196 0 1 1 0 196 A 318 196 0 1 1 0 -196" fill="none"/>
+    <path id="cometPath" d="M -80 96 C 240 22 640 236 1280 76" fill="none"/>
+  </defs>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <ellipse cx="330" cy="90" rx="330" ry="150" fill="url(#nebula1)" filter="url(#blur)"/>
+  <ellipse cx="920" cy="250" rx="300" ry="140" fill="url(#nebula2)" filter="url(#blur)"/>
+
+  <!-- 星尘：缓慢闪烁 -->
+  <g fill="#ffffff">
+    <circle cx="62" cy="46" r="1.3"><animate attributeName="opacity" values="0.15;1;0.15" dur="3.4s" begin="-0.4s" repeatCount="indefinite"/></circle>
+    <circle cx="148" cy="272" r="1.1"><animate attributeName="opacity" values="0.2;0.95;0.2" dur="4.6s" begin="-2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="205" cy="128" r="1.6"><animate attributeName="opacity" values="0.1;0.9;0.1" dur="5.2s" begin="-1.2s" repeatCount="indefinite"/></circle>
+    <circle cx="268" cy="38" r="1"><animate attributeName="opacity" values="0.25;1;0.25" dur="3.8s" begin="-3s" repeatCount="indefinite"/></circle>
+    <circle cx="316" cy="300" r="1.2"><animate attributeName="opacity" values="0.12;0.85;0.12" dur="6s" begin="-0.9s" repeatCount="indefinite"/></circle>
+    <circle cx="392" cy="72" r="1.4"><animate attributeName="opacity" values="0.15;1;0.15" dur="4.1s" begin="-2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="438" cy="238" r="1"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="5.6s" begin="-1.7s" repeatCount="indefinite"/></circle>
+    <circle cx="512" cy="34" r="1.1"><animate attributeName="opacity" values="0.1;1;0.1" dur="4.8s" begin="-3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="566" cy="292" r="1.5"><animate attributeName="opacity" values="0.15;0.95;0.15" dur="3.6s" begin="-0.6s" repeatCount="indefinite"/></circle>
+    <circle cx="641" cy="56" r="1.2"><animate attributeName="opacity" values="0.2;1;0.2" dur="5s" begin="-2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="698" cy="268" r="1"><animate attributeName="opacity" values="0.12;0.88;0.12" dur="4.3s" begin="-1.4s" repeatCount="indefinite"/></circle>
+    <circle cx="762" cy="112" r="1.6"><animate attributeName="opacity" values="0.15;1;0.15" dur="6.2s" begin="-3.1s" repeatCount="indefinite"/></circle>
+    <circle cx="824" cy="302" r="1.1"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.9s" begin="-0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="884" cy="48" r="1.3"><animate attributeName="opacity" values="0.1;1;0.1" dur="5.4s" begin="-2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="946" cy="196" r="1"><animate attributeName="opacity" values="0.2;0.95;0.2" dur="4.5s" begin="-1.9s" repeatCount="indefinite"/></circle>
+    <circle cx="1012" cy="286" r="1.4"><animate attributeName="opacity" values="0.15;0.9;0.15" dur="5.8s" begin="-0.3s" repeatCount="indefinite"/></circle>
+    <circle cx="1068" cy="74" r="1.1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.7s" begin="-2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="1132" cy="248" r="1.5"><animate attributeName="opacity" values="0.12;0.95;0.12" dur="6.4s" begin="-1.1s" repeatCount="indefinite"/></circle>
+    <circle cx="1180" cy="128" r="1"><animate attributeName="opacity" values="0.2;0.85;0.2" dur="4.9s" begin="-3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="96" cy="176" r="0.9"><animate attributeName="opacity" values="0.15;0.9;0.15" dur="5.1s" begin="-2.7s" repeatCount="indefinite"/></circle>
+    <circle cx="1104" cy="166" r="0.9"><animate attributeName="opacity" values="0.18;1;0.18" dur="4.2s" begin="-1.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- 轨道：依次自绘 -->
+  <g mask="url(#orbitMask)">
+  <g transform="translate(600 172) rotate(-8)">
+    <ellipse rx="470" ry="132" fill="none" stroke="#2b2557" stroke-width="1"/>
+    <ellipse rx="470" ry="132" fill="none" stroke="#8b7dff" stroke-width="1.1" opacity="0.55"
+             stroke-dasharray="1264" stroke-dashoffset="1264">
+      <animate attributeName="stroke-dashoffset" from="1264" to="0" dur="2.8s" begin="0.2s" fill="freeze"/>
+    </ellipse>
+    <circle r="3.4" fill="#cfc9ff" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.15;1" dur="1.4s" begin="2.4s" fill="freeze"/>
+      <animateMotion dur="15s" begin="2.4s" repeatCount="indefinite">
+        <mpath href="#orbitA"/>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <g transform="translate(600 172) rotate(14)">
+    <ellipse rx="318" ry="196" fill="none" stroke="#22384a" stroke-width="1"/>
+    <ellipse rx="318" ry="196" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.35"
+             stroke-dasharray="830" stroke-dashoffset="830">
+      <animate attributeName="stroke-dashoffset" from="830" to="0" dur="2.2s" begin="1s" fill="freeze"/>
+    </ellipse>
+    <circle r="2.6" fill="#a5f3fc" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.2;1" dur="1.5s" begin="2.9s" fill="freeze"/>
+      <animateMotion dur="10.5s" begin="2.9s" repeatCount="indefinite">
+        <mpath href="#orbitB"/>
+      </animateMotion>
+    </circle>
+  </g>
+  </g>
+
+  <!-- 彗星 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0.95;0.95;0" keyTimes="0;0.08;0.72;1" dur="9s" begin="2s" repeatCount="indefinite"/>
+    <animateMotion dur="9s" begin="2s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#cometPath"/>
+    </animateMotion>
+    <path d="M 0 0 L -52 -6 L -52 6 Z" fill="url(#tail)"/>
+    <circle r="2.8" fill="#eaf9ff"/>
+  </g>
+
+  <!-- 标题 -->
+  <g opacity="0" filter="url(#glow)">
+    <animate attributeName="opacity" from="0" to="1" dur="1.3s" begin="0.35s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 18" to="0 0" dur="1.3s" begin="0.35s" fill="freeze" calcMode="spline" keySplines="0.22 0 0.2 1"/>
+    <text x="600" y="182" text-anchor="middle" fill="url(#word)"
+          font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" letter-spacing="12">ASTRA PRAXIS</text>
+  </g>
+
+  <g opacity="0" fill="#cfc9ff">
+    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.5s" fill="freeze"/>
+    <path d="M 196 132 L 201 141 L 210 146 L 201 151 L 196 160 L 191 151 L 182 146 L 191 141 Z" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 196 146" to="360 196 146" dur="26s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1012 196 L 1017 205 L 1026 210 L 1017 215 L 1012 224 L 1007 215 L 998 210 L 1007 205 Z" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="360 1012 210" to="0 1012 210" dur="26s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 副标题 -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="1.1s" begin="1.1s" fill="freeze"/>
+    <text x="600" y="238" text-anchor="middle" fill="#9c9ac0"
+          font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" letter-spacing="5">ASTRA 是星 · PRAXIS 是动手 · 星图画在你自己的硬盘上</text>
+  </g>
+
+  <rect x="420" y="264" width="360" height="1" fill="url(#rule)" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.8s" fill="freeze"/>
+    <animate attributeName="width" from="0" to="360" dur="1.4s" begin="1.8s" fill="freeze" calcMode="spline" keySplines="0.22 0 0.2 1"/>
+  </rect>
+
+  <g opacity="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="3">
+    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="2.3s" fill="freeze"/>
+    <text x="600" y="292" text-anchor="middle" fill="#6f6d92">local-first · 权限先行 · 密钥留舰 · 记忆加密在本机</text>
+  </g>
+
+  <g opacity="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="4">
+    <animate attributeName="opacity" values="0;0.9;0.45;0.9" dur="6s" begin="3s" repeatCount="indefinite"/>
+    <text x="600" y="318" text-anchor="middle" fill="#4f4d72">macOS   ·   Windows   ·   Linux        Tauri 2 + Rust + React</text>
+  </g>
+</svg>
