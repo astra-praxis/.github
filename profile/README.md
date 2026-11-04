@@ -46,6 +46,31 @@
 <img src="https://raw.githubusercontent.com/astra-praxis/.github/main/profile/assets/engine.svg" alt="引擎室数据流示意图：工具的调用都要穿过权限引擎" width="100%" />
 </div>
 
+## 🗂 仓库地图 · 每个仓管什么
+
+**公开仓**
+
+| 仓库 | 职责 | 一句话 |
+| --- | --- | --- |
+| [astra](https://github.com/astra-praxis/astra) | 桌面应用本体 + 三端发布 | 你下载安装的那个 App。Tauri 2 壳 + React 前端 + Rust 内核，Actions 出 macOS / Windows / Linux 安装包 |
+| [astra-bot](https://github.com/astra-praxis/astra-bot) | `astra-serve-host` 二进制分发 | 只放二进制和 [latest.json](https://github.com/astra-praxis/astra-bot/blob/main/latest.json)。桌面端靠它自动下载并 sha256 校验；源码不在这 |
+| [astra-memory-mcp](https://github.com/astra-praxis/astra-memory-mcp) | 记忆的 MCP 出口 | stdio MCP server，把本地加密记忆接给 Cursor / Claude Code / DeepSeek Harness。一个二进制，零服务，无端口 |
+| [.github](https://github.com/astra-praxis/.github) | 组织级配置与展示 | 就是你正在看的这一页，外加 `profile/assets/` 里那三段手写 SVG |
+
+**内部仓**（还在造，暂不公开，所以不挂链接）
+
+| 仓库 | 职责 | 一句话 |
+| --- | --- | --- |
+| astra-core | Agent Runtime SDK | 可嵌入任意 Rust 宿主的运行时：模型流式交互、工具执行、权限管线、事件协议、会话持久化。拆成一排 crate，宿主只 import 一个门面 |
+| astra-serve | Serve 层（HTTP 宿主） | 一个 Serve = 一份需求 + 一个工作空间，独立跑完研发闭环后进终态。Entity / Task / Execution 三层都落在这 |
+| astra-desktop | Entity 特性的开发分支 | 从 `astra` 复制派生的独立工作区（内部包名 `astra-workflow`），近期提交都围绕 Entity 控制中心：Fleet、创建、工作区接入 |
+| astra-workflow | 通用 AI 工作流 SDK | 不专供软件开发：只管定义、编排、状态、审批、恢复、交付这几件事 |
+| astra-memory | 记忆引擎内核 | 形成 / 确认 / 强化 / 衰减 / 合并 / 替代 / 遗忘。`astra-memory-mcp` 是它的对外出口 |
+| astra-bid | 垂类场景试验田 | 招投标方向的落点，早期 |
+| jev-test | 验证沙盒 | 只为 `astra-memory` 的决策模型选型做前置测试，不是产品 |
+
+> 一条纪律：能不能上公开航图，看它自己 README 里的「未完成」划完了没有。
+
 ## 🚀 起飞
 
 1. 打开 **[astra Releases](https://github.com/astra-praxis/astra/releases)**，领你那块系统的安装包。
@@ -78,7 +103,7 @@
 
 ## 📡 船员日志
 
-> runtime / core 还在灶上，公开航图里先不挂链接。能下载、能接上的，就是上面航图里的三处。
+> runtime / core 还在灶上，公开航图里先不挂链接。能下载、能接上的，就是上面航图里的三处；其余七个仓在「仓库地图」里能看到职责，门暂时关着。
 
 ---
 
